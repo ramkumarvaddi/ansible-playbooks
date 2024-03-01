@@ -1,0 +1,13 @@
+---
+- name: create a and store some date on it
+  hosts: all
+  tasks:
+    - name: create a file
+      file:
+        name: /tmp/file2
+        state: touch
+    - name: store some date in the file
+      copy:
+        content: ram is a good bye
+        dest: /tmp/file2
+...
