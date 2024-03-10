@@ -1,0 +1,17 @@
+---
+ - name: Error handling
+   hosts: all
+   tasks:
+     - block :
+         - name: install git on ubuntu
+           apt:
+              name: git
+              state: present
+              update_cache: yes
+      rescue:
+        - name: install git on centos
+          yum:
+             name: git
+             state: present
+             update_cache: yes
+...  
