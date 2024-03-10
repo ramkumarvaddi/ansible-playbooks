@@ -9,7 +9,7 @@
         update_cache: yes
     - name: edit the index.html
       copy:
-        content: ram is a good bye clear also
+        content: chitti i love u but i fuck u .. hard..
         dest: /var/www/html/index.html
     - name: restart the apache2
       service:

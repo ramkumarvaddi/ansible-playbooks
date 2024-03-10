@@ -1,0 +1,14 @@
+---
+- name: installing the softwares
+  hosts: all
+  tasks: 
+    - name: implementing loops
+      apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      with_items:
+         - tree
+         - git
+         - maven
+...
