@@ -1,0 +1,23 @@
+---
+    - name: apache installation
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: edit the index.html
+      copy:
+        content: chitti i love u but i fuck u .. hard..
+        dest: /var/www/html/index.html
+    - name: restart the apache2
+      service:
+        name: apache2
+        state: restarted
+    - name: chek apache2 response on server1
+      uri:
+        url: http://172.31.44.242
+        status_code: 200
+    - name: chek apache2 response on server2
+      uri:
+        url: http://172.31.33.130
+        status_code: 200
+...

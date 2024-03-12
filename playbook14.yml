@@ -1,0 +1,6 @@
+----
+ - name: copy passwd file
+   copy: 
+      src: /home/ubuntu/playbooks/file143
+      dest: /tmp
+...
