@@ -1,0 +1,13 @@
+---
+ - name: create tomcat as qaserver and prodserver
+   docker_container:
+     name: "{{item.a}}"
+     image: tomcat
+     ports:
+       - "{{item.b}}"
+   with_items:
+      - {a: qaserver, b: "6060:8080"}
+      - {a: prodserver, b: "7070:8080"}
+
+...
+

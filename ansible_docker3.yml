@@ -1,0 +1,10 @@
+---
+ - name: install the docker containers
+   hosts: all
+   tasks:
+      - name: create a docker containers
+        docker_container:
+           name: appserver
+           image: tomee
+...
+

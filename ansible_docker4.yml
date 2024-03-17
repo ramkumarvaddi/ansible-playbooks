@@ -1,0 +1,20 @@
+---
+ - name: working on doker contianer 
+   hosts: all
+   tasks: 
+     - name: create a docker contaienrs
+       docker_container: 
+          name: appserver
+          image: tomee
+     - name: stope the docker container
+       docker_container:
+         name: appserver
+         state: stopped
+     - name: delete the tomcat conatainer
+       docker _container:
+        name: appserver
+        status: absent
+...
+
+
+
